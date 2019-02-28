@@ -1,0 +1,272 @@
+body {
+    position: relative;
+    margin: 0;
+    background-color: #404040;
+    color: white;
+    font-family: sans-serif;
+}
+
+.title {
+    font-size: 48px;
+    margin: 20px;
+}
+
+.start {
+    width: 200px;
+    height: 70px;
+    background-color: #404040;
+    font-size: 20px;
+    border-radius: 35px;
+    color: white;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.start:hover {
+    background-color: #555;
+    transform: translateY(-3px);
+    box-shadow: 2px 4px 16px rgba(0,0,0,.3);
+}
+
+.functionality {
+    display: flex;
+    justify-content: center;
+}
+
+.remainingguesses {
+    text-align: center;
+    width: 100px;
+    background-color: #333;
+    border-radius: 0 0 10px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings {
+    width: 100px;
+    font-size: 32px;
+    background-color: #333;
+    border-radius: 0 0 0 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colourbuttonframe {
+    width: 500px;
+    margin: 0 auto;
+    padding: 8px 20px 8px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    position: relative;
+    z-index: 5;
+}
+
+.colourbuttonframe .colourbutton {
+    cursor: pointer;
+}
+
+.colourbutton {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: -3px -6px 20px rgba(0,0,0,.3), 3px 6px 10px rgba(255,255,255,.05);
+    margin: 0 6px;
+    overflow: hidden;
+}
+.colourbutton::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.5);
+    opacity: .5;
+    box-shadow: 0px 0px 30px 8px rgba(255,255,255,.8);
+}
+
+.colourbutton--white {
+    background-image: linear-gradient(to right bottom, #f5f5f5, #e5e5e5);
+}
+
+.colourbutton--red {
+    background-image: linear-gradient(to right bottom, #f41818, #cc1313);
+}
+
+.colourbutton--orange {
+    background-image: linear-gradient(to right bottom, #f48618, #cc6f13);
+}
+
+.colourbutton--yellow {
+    background-image: linear-gradient(to right bottom, #f4f418, #cccc13);
+}
+
+.colourbutton--green {
+    background-image: linear-gradient(to right bottom, #61f418, #50cc13);
+}
+
+.colourbutton--blue {
+    background-image: linear-gradient(to right bottom, #1886f4, #136fcc);
+}
+
+.colourbutton--purple {
+    background-image: linear-gradient(to right bottom, #8618f4, #7013cc);
+}
+
+.colourbutton--pink {
+    background-image: linear-gradient(to right bottom, #f418bd, #cc149e);
+}
+
+.colourbutton--delete {
+    background-image: linear-gradient(to right bottom, #222, #111);
+    color: white;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guess-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.currentguessframe {
+    height: 40px;
+    width: 468px;
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid #444;
+}
+
+.yourguess {
+    padding-right: 8px;
+}
+
+.guessframe {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.guessholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #333;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.25);
+}
+
+.guessholder:first-child {
+    border-radius: 10px 10px 0 0;
+}
+
+.guessholder:last-child {
+    border-radius: 0px 0px 10px 10px;
+}
+
+.guessholder:only-child {
+    border-radius: 10px;
+}
+
+.matchholder {
+    display: flex;
+    flex-direction: column;
+}
+
+.match {
+    margin: 2px 0px 2px 8px;
+}
+
+.gameover {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.gameover-header {
+    font-weight: 700;
+    font-size: 36px;
+    margin: 8px;
+}
+
+.gameover-text {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.playagain {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: red;
+    box-shadow: 4px 8px 20px rgba(0,0,0,.2);
+    transition: all .3s;
+}
+
+.playagain:hover {
+    transform: translate(0, -2px);
+    box-shadow: 6px 12px 30px rgba(0,0,0,.2);
+}
+
+.intro {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    z-index: 10;
+    transition: opacity 1s;
+}
+
+.winscreen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 1s;
+}

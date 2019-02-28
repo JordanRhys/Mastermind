@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Codebreaker</title>
+        <!-- <meta name="description" content=""> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="intro" class="intro">
+            <h1 class="intro--title">Codebreaker</h1>
+            <button onclick="play()" class="button">Start Game</button>
+        </div>
+
+        <section class="functionality">
+            <div class="rem-guesses">
+                <p id="remguesses" class="rem-guesses--number"></p>
+                <p class="rem-guesses--text">Guesses<br>Remaining</p>
+            </div>
+
+            <div class="colourbuttonframe">
+                <button onclick="insertColour('White')" class="colourbutton colourbutton--white"></button>
+                <button onclick="insertColour('Red')" class="colourbutton colourbutton--red"></button>
+                <button onclick="insertColour('Orange')" class="colourbutton colourbutton--orange"></button>
+                <button onclick="insertColour('Yellow')" class="colourbutton colourbutton--yellow"></button>
+                <button onclick="insertColour('Green')" class="colourbutton colourbutton--green"></button>
+                <button onclick="insertColour('Blue')" class="colourbutton colourbutton--blue"></button>
+                <button onclick="insertColour('Purple')" class="colourbutton colourbutton--purple"></button>
+                <button onclick="insertColour('Pink')" class="colourbutton colourbutton--pink"></button>
+                <button onclick="deleteColour()" class="colourbutton colourbutton--delete">&larr;</button>
+            
+                <div id="currentguessframe" class="currentguessframe"></div>
+            </div>
+
+            <div class="settings">
+                <input id="settings" type="checkbox" class="settings-toggle">
+                <label for="settings" class="settings-label">
+                    <div class="settings-icon">&#x2699;</div>
+                </label>
+                <div class="settings-screen">
+                    <h2 class="settings-screen--header">Settings</h2>
+                    <div class="settings-screen--section">
+                        <p class="settings-screen--text">Number of turns: </p>
+                        <select onchange="changeTurns(this.value)">
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12" selected>12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                        </select>
+                    </div>
+                    <div class="settings-screen--section">
+                        <p class="settings-screen--text">Length of code: </p>
+                        <select onchange="changeDifficulty(this.value)">
+                            <option value="3">3</option>
+                            <option value="4" selected>4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div class="settings-screen--section">
+                        <p class="settings-screen--text">Allow duplicate colours: </p>
+                        <select onchange="changeMultiples(this.value)">
+                            <option value="'Multi'" selected>Yes</option>
+                            <option value="Single">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="guess-section">
+                <div id="guessframe" class="guessframe">
+            
+                </div>
+        </div>
+        
+        <div id="gameover" class="gameover">
+            <div id="lostcode" class="gameover--code"></div>
+            <h2 class="gameover--header">Game Over!</h2>
+            <p class="gameover--text">You failed to crack the code</p>
+            <button onclick="play()" class="button">Play Again</button>
+        </div>
+
+        <div id="winscreen" class="winscreen">
+            <div id="wincode" class="winscreen--code"></div>
+            <h2 class="winscreen--header">Congratulations!</h2>
+            <p class="winscreen--text">You cracked the code!</p>
+            <button onclick="play()" class="button">Play Again</button>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
